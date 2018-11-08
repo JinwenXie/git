@@ -1,6 +1,6 @@
-##使用git上遇到的一些问题
+##使用git上遇到的一些问题##
 
-###一、github连接超时
+###一、github连接超时###
 检查连接github是否成功  
 在命令行输入：   `ssh -T git@github.com`  
 如果出现：You've successfully authenticated，那么连接成功可以使用了；  
