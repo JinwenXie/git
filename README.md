@@ -7,7 +7,7 @@
 如果出现：ssh: connect to host github.com port 22: Connection timed out，很遗憾连接超时；  
 
 **解决方法：**  
-首先我们得要找到git的安装目录，找到/etc/ssh/ssh_config文件_（如果忘记了自己git的安装目录，我们可以在命令行输入：`where git`就可以打印出git的安装目录）_;<br>
+首先我们得要找到git的安装目录，找到/etc/ssh/ssh_config文件（如果忘记了自己git的安装目录，我们可以在命令行输入：`where git`就可以打印出git的安装目录）;<br>
 ![](https://i.imgur.com/XmVFspc.png)  
 
 然后在ssh_config文件末尾处添加：  
