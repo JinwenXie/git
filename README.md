@@ -1,6 +1,22 @@
 ## 使用git上遇到的一些问题<br>
+### 一、创建SSH Key
+由于本地Git仓库和github仓库之间的传输是通过SSH加密的，所以我们需要创建SSH Key。我们先在用户主目录下看看有没有.ssh目录,如果有,再看看这个目录下是不是有如下图三个文件：<br>
+![](https://i.imgur.com/HaOeaEo.png)
+果有的话，直接跳过如下命令，如果没有的话，打开命令行，输入如下命令：<br>
+    ssh-keygen  -t rsa –C “youremail@example.com”<br>
+这个时候，有些用户，又会出现一个问题，那就是**ssh-keygen 不是内部或外部命令**<br>
+#### ssh-keygen 不是内部或外部命令的解决办法
+1. 在你自己的git安装目录下*usr/bin*目录下的ssh-keygen.exe，**复制该路径**
+![](https://i.imgur.com/isYDs1h.png)<br>
+2. 属性-->高级系统设置-->环境变量-->系统变量,找到Path变量，进行编辑，End到最后，输入分号，粘贴复制的ssh-keygen所在的路径，保存；<br>
+![](https://i.imgur.com/yQbay4k.png)
+![](https://i.imgur.com/sRUKUSw.png)
+3. 在cmd上重新执行命令:<br>
+    ssh-keygen  -t rsa –C “youremail@example.com”
+成功后会看到如下图:
+![](https://i.imgur.com/q5EfOiK.png)
 
-### 一、github连接超时<br>
+### 二、github连接超时<br>
 检查连接github是否成功  
 在命令行输入：   `ssh -T git@github.com`  
 如果出现：You've successfully authenticated，那么连接成功可以使用了；  
@@ -10,7 +26,7 @@
 首先我们得要找到git的安装目录，找到/etc/ssh/ssh_config文件（如果忘记了自己git的安装目录，我们可以在命令行输入：`where git`就可以打印出git的安装目录）;<br>
 ![](https://i.imgur.com/XmVFspc.png)  
 
-然后在ssh_config文件末尾处添加：  
+然后在ssh_config文件末尾处添加：<br>
 	`Host github.com `
 	`User git`  
 	`Hostname ssh.github.com`  
@@ -23,4 +39,5 @@
 输入： `yes` 即可  
 出现如下图文字，即表示连接成功  
 ![](https://i.imgur.com/JqMRAAr.png)
+
 
