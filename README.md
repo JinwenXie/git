@@ -1,5 +1,5 @@
-## 使用git上遇到的一些问题<br>
-### 一、创建SSH Key
+## 使用git遇到的一些问题<br>
+### 一、SSH Key的创建
 由于本地Git仓库和github仓库之间的传输是通过SSH加密的，所以我们需要创建SSH Key。我们先在用户主目录下看看有没有.ssh目录,如果有,再看看这个目录下是不是有如下图三个文件：<br>
 ![](https://i.imgur.com/HaOeaEo.png)
 果有的话，直接跳过如下命令，如果没有的话，打开命令行，输入如下命令：<br>
@@ -22,7 +22,7 @@
 如果出现：You've successfully authenticated，那么连接成功可以使用了；  
 如果出现：ssh: connect to host github.com port 22: Connection timed out，很遗憾连接超时；  
 
-**解决方法：**  
+##### 解决方法
 首先我们得要找到git的安装目录，找到/etc/ssh/ssh_config文件（如果忘记了自己git的安装目录，我们可以在命令行输入：`where git`就可以打印出git的安装目录）;<br>
 ![](https://i.imgur.com/XmVFspc.png)  
 
