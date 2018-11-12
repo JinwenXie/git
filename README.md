@@ -40,4 +40,14 @@
 出现如下图文字，即表示连接成功  
 ![](https://i.imgur.com/JqMRAAr.png)
 
+### 三、Github.com无法访问
+在网上查阅了一波，基本都是说修改hosts文件，往后边添加如下代码：<br>
+    74.125.237.1 dl-ssl.google.com<br>
+	173.194.127.200 groups.google.com<br>
+	192.30.252.131 github.com<br>
+	185.31.16.185 github.global.ssl.fastly.net<br>
+	74.125.128.95 ajax.googleapis.com<br>
+然而，没有啥用，可能我自己电脑的问题吧。晚上回去再看看
+
+
 
